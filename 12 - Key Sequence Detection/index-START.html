@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+const pressedArr = []
+const secretCode = 'abc123'
+window.addEventListener('keyup', (e) => {
+  // console.log(e.key)
+  // console.log(pressedArr)
+  pressedArr.push(e.key)
+  pressedArr.splice(-secretCode.length - 1, pressedArr.length - secretCode.length)
+
+  if(pressedArr.join('').includes(secretCode)){
+    console.log("Ding, Ding!")
+    cornify_add()
+  }
+})
+
 </script>
 </body>
 </html>
